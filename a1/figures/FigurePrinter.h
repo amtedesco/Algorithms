@@ -1,9 +1,14 @@
+// Header Guard for FigurePrinter Header
 #ifndef FIGUREPRINTER_H
 #define FIGUREPRINTER_H
 
+// Includes classes
 #include <iostream>
+#include <cmath>
+#include <string>
 using namespace std;
 
+//Creates Abstract class FigurePrinter
 class FigurePrinter
 {
     private:
@@ -11,8 +16,9 @@ class FigurePrinter
         int n; 
 
     public:
-        // Constructor for FigurePrinter
+        // Constructor and Destructor for FigurePrinter
         FigurePrinter (int num) {n = num;}
+        virtual ~FigurePrinter() = 0;
 
         // Accessor method for subclasses
         int getNum() {return n;}
@@ -21,4 +27,8 @@ class FigurePrinter
         virtual void printFigure() = 0;
 };
 
+// Deconstructor implementation
+FigurePrinter :: ~FigurePrinter(){}
+
+// End of Header
 #endif //FIGUREPRINTER_H

@@ -1,28 +1,25 @@
+// Header Guard for RhombusPrinter Header
 #ifndef RHOMBUSPRINTER_H
 #define RHOMBUSPRINTER_H
 
+// Include FigurePrinter Class for polymorphism
 #include "FigurePrinter.h"
-using namespace std;
 
+// Creates Derived Class for RhombusPrinter
 class RhombusPrinter : public FigurePrinter
 {
     public:
-        // Pure Virtual function to print figures
-        void printFigure()
-        {
-            int n = getNum();
-            for ( int i = 0 ; i < (n/2) ; i++)           
-            {   
+        /* Constructor and Destructor for RhombusPrinter, 
+            uses FigurePrinter */
+        RhombusPrinter (int n): FigurePrinter (n) {};
+        ~RhombusPrinter(){};
 
-                for (int spaces = 0; spaces <(2*n-(i*2)); spaces++)       
-                    std::cout << " ";
+        /* Pure Virtual function to print figures,
+            Overrides FigurePrinter */
+        void printFigure();
 
-                for (int stars = 0; stars < n; stars++)         
-                    std::cout << "*";
-
-                std::cout << "\n";
-            }
-        }
+        // Function to print rhombus
+        void printRhombus();
 };
 
 #endif //DIAMONDPRINTER_H
