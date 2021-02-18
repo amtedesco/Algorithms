@@ -9,7 +9,8 @@
 class TrianglePrinter : public FigurePrinter
 {
     public:
-        // Constructor for TrianglePrinter, uses FigurePrinter
+        /* Constructor and Destructor for TrianglePrinter
+         uses FigurePrinter */
         TrianglePrinter (int n): FigurePrinter (n) {};
         ~TrianglePrinter(){};
 
