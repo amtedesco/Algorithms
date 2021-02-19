@@ -86,7 +86,7 @@ int SimpleDate :: monthLength (void)
         case 2:
             /* If it is a leap year, returns 29
             else, returns 28 */
-            if (!(this->leapYear()))
+            if (!(leapYear()))
                 return 28;
             else
                 return 29;;
@@ -124,7 +124,7 @@ SimpleDate SimpleDate :: nextDate (void)
     int m = this->month, d = this->day, y = this->year;
 
     //If day is not the last day in the month, adds 1 to new day
-    if (this->day < this->monthLength())
+    if (this->day < monthLength())
     {
         d = this->day + 1;
     }
