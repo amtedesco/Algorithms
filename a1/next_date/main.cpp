@@ -53,12 +53,11 @@ int main (int argc, char** argv)
     catch(DateException& e)
     {
         /* If DateException is thrown,
-            catches it and outputs message */
+            catches it, and outputs message */
         std::cout << e.what() << "\n";
+        // Stops Program
+        return 1;
     }
-
-    // Formats new SimpleDate into a string and outputs it
-    std::cout << newDay.toString() << '\n';
 
     // Calls nextDate procedure and assigns returned SimpleDate to object
     SimpleDate nextDay = newDay.nextDate();
