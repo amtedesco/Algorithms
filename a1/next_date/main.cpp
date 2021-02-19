@@ -13,18 +13,18 @@
 #include "DateException.cpp"
 
 // Procedure to check if date entered is valid
-void validateInput (int month, int day, int year, SimpleDate date)
+void validateInput (int *month, int *day, int *year, SimpleDate date)
 {
     //Checks if year is valid
-    if (year < 1812 || year > 2030)
+    if (*year < 1812 || *year > 2030)
         throw DateException();
 
     //Checks if month is valid
-    if (month < 1 || month > 12)
+    if (*month < 1 || *month > 12)
         throw DateException();
 
     //Checks if day is valid
-    if (day < 1 || day > date.monthLength())
+    if (*day < 1 || *day > date.monthLength())
         throw DateException();
 
 }
@@ -48,7 +48,7 @@ int main (int argc, char** argv)
     try
     {
         // Determines if the dates inputted are valid
-        validateInput(month, day, year, newDay);
+        validateInput(&month, &day, &year, newDay);
     }
     catch(DateException& e)
     {
