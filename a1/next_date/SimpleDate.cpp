@@ -1,5 +1,5 @@
 //
-// Created by Amanda Tedesco on 2/18/21.
+// Created by Amanda Tedesco on 2/18/21.cd
 //
 
 /* SimpleDate class implementation */
@@ -123,11 +123,8 @@ SimpleDate SimpleDate :: nextDate (void)
     //Creates local variables to manipulate for next date
     int m = this->month, d = this->day, y = this->year;
 
-    // Determines if year is a leap year and month length
-    int monthlen = this->monthLength();
-
     //If day is not the last day in the month, adds 1 to new day
-    if (this->day < monthlen)
+    if (this->day < this->monthLength())
     {
         d = this->day + 1;
     }
